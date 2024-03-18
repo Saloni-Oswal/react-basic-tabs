@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 0.1;
+  flex-basis: min-content;
+}
+
+.btn {
+  padding: 5px;
+  font-size: 2rem;
+}
