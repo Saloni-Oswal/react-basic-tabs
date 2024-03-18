@@ -13,25 +13,36 @@ const Tabs: React.FC<PropsWithChildren> = ({
 
   if (!Array.isArray(children)) return <>{children}</>;
 
-  const tabs = children!.map((child: React.ReactElement, index: number) => {
-    const viewElement = React.cloneElement(child, {
-      tabIndex: index,
-    });
+  const updatedChildren = children.map(
+    (child: React.ReactElement, index: number) => {
+      return React.cloneElement(child, {
+        tabIndex: index,
+      });
+    }
+  );
 
-    return (
-      <div className='tabs'>
-        <TabButton
-          key={index}
-          index={index}
-          toggleActiveTab={toggleActiveTab}
-          isActive={activeTab === index}
-          {...child.props}
-        ></TabButton>
-        {viewElement.props.tabIndex === activeTab ? viewElement : ""}
-      </div>
-    );
-  });
-  return <div className='tabs-container'>{tabs}</div>;
+  return (
+    <div className='tabs-container'>
+      {updatedChildren.map((child: React.ReactElement, index: number) => {
+        const {
+          tabIndex,
+          children,
+        }: { tabIndex: number; children: React.ReactElement } = child.props;
+        return (
+          <div className='tabs'>
+            <TabButton
+              key={index}
+              index={index}
+              toggleActiveTab={toggleActiveTab}
+              isActive={activeTab === index}
+              {...child.props}
+            ></TabButton>
+            {tabIndex === activeTab ? children : ""}
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Tabs;
