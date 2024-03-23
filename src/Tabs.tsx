@@ -16,8 +16,7 @@ const Tabs: React.FC<PropsWithChildren> = ({
   return (
     <div className='tabs-container'>
       {children.map((child: React.ReactElement, index: number) => {
-        const { children }: { tabIndex: number; children: React.ReactElement } =
-          child.props;
+        const { children }: { children: React.ReactElement } = child.props;
         return (
           <div className='tabs'>
             <TabButton
