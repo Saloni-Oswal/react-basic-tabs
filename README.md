@@ -38,7 +38,12 @@ Requirements:
 1. Your component must return a div with classname of tabs.
 2. For each children element with title property, the component should render a button with classname of btn.
 3. Clicking on a button should change the currently active tab by:
-   > rendering a child element corresponding to it in a div with a classname of view.
-   > disabling the button (HTML attribute) and changing its classname to btn-active.
-4. Initially the first tab should be active ( the first child rendered, and the first button disabled with class btn-active).
-5. Only one button should be active at any given moment.
+   a) endering a child element corresponding to it in a div with a classname of view.
+   b) disabling the button (HTML attribute) and changing its classname to btn-active.
+5. Initially the first tab should be active ( the first child rendered, and the first button disabled with class btn-active).
+6. Only one button should be active at any given moment.
+
+
+Demo:
+
+![tabs](https://github.com/Saloni-Oswal/react-basic-tabs/assets/20659496/bb7a5d44-8a07-4c3f-a27f-62f982481d16)
